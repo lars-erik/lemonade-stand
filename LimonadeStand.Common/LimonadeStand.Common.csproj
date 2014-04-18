@@ -39,6 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RandomEvents\EventFactory.cs" />
+    <Compile Include="RandomEvents\HeatWave.cs" />
+    <Compile Include="RandomEvents\JustAnotherDay.cs" />
+    <Compile Include="RandomEvents\Rain.cs" />
+    <Compile Include="RandomEvents\RandomEvent.cs" />
+    <Compile Include="RandomEvents\StreetWork.cs" />
+    <Compile Include="Rnd.cs" />
     <Compile Include="Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
