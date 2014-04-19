@@ -1,0 +1,40 @@
+A(i): Assets (cash on hand, in dollars) 
+C: cost of lemonade per glass, in cents 
+G(i): normally 1; 0 if everything is ruined by thunderstorm 
+H(i): apparently intended to relate to storms, but never assigned a value 
+I: current player number, 1 to N 
+L(i): number of glasses of lemonade made by player i 
+N: number of players 
+P(i): Price charged for lemonade, per glass, in cents 
+R1: weather factor; 1 for good weather, 0>R<1 for poor weather;   
+  also adjusts traffic for things like street crews working 
+R2: set to 2 half the time when street department is working;   
+  indicates that street crew bought all lemonade at lunch 
+R3: always equal to 0; not used 
+S(i): Number of signs made by player i 
+S3: cost per advertising sign, in dollars 
+SC: sky color (2=sunny, 5=thunderstorms, 7=hot & dry, 10=cloudy). 
+X1: set to 1 when it's cloudy; not sure what the intent was, but has   
+  no actual effect since line 2100 is unreachable. 
+X2: set to 1 when the street crew has worked and was not thirsty;   
+  apparently intended to prevent street crews from coming again,   
+  but doesn't actually work since line 2200 is unreachable.
+
+
+J = rain chance
+
+P9: High price offset, const 10
+S2: Sales modifier? const 30
+A2: Assets start value, const 2
+C9: Negative sign modifier? const  .5
+C2: Extra sign modifier? const 1
+
+W: Sign modifier
+V: Sign modification result?
+
+N1: Initial glasses sold
+N2: Glasses sold?
+
+M: Revenue
+E: Expenses
+P1: Profits
