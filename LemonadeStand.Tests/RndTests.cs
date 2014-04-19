@@ -1,4 +1,5 @@
 ﻿using System;
+using LemonadeStand.Common;
 using NUnit.Framework;
 
 namespace LemonadeStand.Tests

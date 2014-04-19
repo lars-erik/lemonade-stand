@@ -1,4 +1,6 @@
-﻿using LemonadeStand.Tests.Fakes;
+﻿using LemonadeStand.Common;
+using LemonadeStand.Common.Commands;
+using LemonadeStand.Tests.Fakes;
 using NUnit.Framework;
 
 namespace LemonadeStand.Tests.Commands

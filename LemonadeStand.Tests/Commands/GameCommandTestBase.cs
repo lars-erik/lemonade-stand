@@ -1,4 +1,5 @@
 ﻿using System;
+using LemonadeStand.Common;
 using LemonadeStand.Tests.Fakes;
 using NUnit.Framework;
 

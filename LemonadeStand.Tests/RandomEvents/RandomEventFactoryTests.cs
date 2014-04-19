@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using LemonadeStand.Common;
+using LemonadeStand.Common.RandomEvents;
+using NUnit.Framework;
 
 namespace LemonadeStand.Tests.RandomEvents
 {
