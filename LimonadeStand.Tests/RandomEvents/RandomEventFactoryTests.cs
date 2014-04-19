@@ -28,6 +28,16 @@ namespace LimonadeStand.Tests.RandomEvents
         [Test]
         [TestCase(1)] // .24
         [TestCase(14)] // .4
+        public void Create_WhenSunny_DayLessThan3IsNormal(int seed)
+        {
+            Rnd.Reset(seed);
+            var evt = RandomEventFactory.Create(2, Weather.Sunny);
+            Assert.IsInstanceOf<NormalDay>(evt);
+        }
+
+        [Test]
+        [TestCase(1)] // .24
+        [TestCase(14)] // .4
         public void Create_WhenSunny_Has25PercentChanceOfStreetWork(int seed)
         {
             AssertSunnyDay<StreetWork>(seed);
@@ -57,7 +67,7 @@ namespace LimonadeStand.Tests.RandomEvents
         private static void AssertWeatherEvent<TRandomEvent>(Weather weather) 
             where TRandomEvent : RandomEvent
         {
-            var evt = RandomEventFactory.Create(weather);
+            var evt = RandomEventFactory.Create(3, weather);
             Assert.IsInstanceOf<TRandomEvent>(evt);
         }
     }

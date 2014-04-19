@@ -2,6 +2,10 @@
 {
     public class HeatWave : RandomEvent
     {
+        public HeatWave() : base("Heat wave")
+        {
+        }
+
         public override string ForecastMessage
         {
             get { return "There's a heat wave predicted today."; }

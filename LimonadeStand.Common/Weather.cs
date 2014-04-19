@@ -5,13 +5,24 @@ namespace LimonadeStand.Common
 {
     public class Weather
     {
-        public static readonly Weather Sunny = new Weather();
-        public static readonly Weather Cloudy = new Weather();
-        public static readonly Weather HotAndDry = new Weather();
+        private readonly string name;
+        public static readonly Weather Sunny = new Weather("Sunny");
+        public static readonly Weather Cloudy = new Weather("Cloudy");
+        public static readonly Weather HotAndDry = new Weather("HotAndDry");
 
-        private Weather()
+        private Weather(string name)
         {
-            
+            this.name = name;
+        }
+
+        public string Name
+        {
+            get { return name; }
+        }
+
+        public override string ToString()
+        {
+            return name;
         }
 
         public static Weather Create(int day)

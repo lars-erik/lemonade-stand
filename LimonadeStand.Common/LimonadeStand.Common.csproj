@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Calculation.cs" />
     <Compile Include="Choices.cs" />
+    <Compile Include="Day.cs" />
     <Compile Include="RandomEvents\RandomEventsFactory.cs" />
     <Compile Include="RandomEvents\HeatWave.cs" />
     <Compile Include="RandomEvents\NormalDay.cs" />

@@ -2,12 +2,12 @@
 {
     public class StreetWork : RandomEvent
     {
-        private double chance;
-        private bool boughtAll;
+        private readonly bool boughtAll;
 
         public StreetWork()
+            : base("Street work")
         {
-            chance = Rnd.NextDouble();
+            var chance = Rnd.NextDouble();
             boughtAll = chance < .25;
         }
 

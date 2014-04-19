@@ -2,6 +2,7 @@
 {
     public abstract class RandomEvent
     {
+        public string Name { get; private set; }
         public abstract double Modify(double baseSales, Choices choices);
 
         public virtual string ForecastMessage 
@@ -12,6 +13,11 @@
         public virtual string ResultMessage 
         {
             get { return ""; }
+        }
+
+        protected RandomEvent(string name)
+        {
+            Name = name;
         }
     }
 }

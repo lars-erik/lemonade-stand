@@ -17,5 +17,11 @@ namespace LimonadeStand.Common.RandomEvents
         {
             return 0;
         }
+
+        public Storm()
+            : base("Storm")
+        {
+            
+        }
     }
 }

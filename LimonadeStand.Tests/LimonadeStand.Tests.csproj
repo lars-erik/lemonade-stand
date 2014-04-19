@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculationTests.cs" />
+    <Compile Include="DayTests.cs" />
     <Compile Include="RandomEvents\HeatWaveTests.cs" />
     <Compile Include="RandomEvents\RainTests.cs" />
     <Compile Include="RandomEvents\RandomEventFactoryTests.cs" />

@@ -7,10 +7,16 @@ namespace LimonadeStand.Common.RandomEvents
         private readonly double chance;
 
         public Rain()
+            : this("Rain")
         {
-            chance = .3 + Rnd.NextDouble()*.5;
         }
-        
+
+        protected Rain(string name)
+            : base(name)
+        {
+            chance = .3 + Rnd.NextDouble() * .5;
+        }
+
         public override double Modify(double baseSales, Choices choices)
         {
             return Math.Floor(baseSales*(1-chance));

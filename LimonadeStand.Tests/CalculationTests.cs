@@ -83,6 +83,7 @@ namespace LimonadeStand.Tests
             private readonly double factor;
 
             public FakeRandomEvent(double factor)
+                : base("Fake event")
             {
                 this.factor = factor;
             }

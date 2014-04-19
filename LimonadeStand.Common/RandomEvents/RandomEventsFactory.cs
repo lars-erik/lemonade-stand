@@ -2,7 +2,7 @@
 {
     public class RandomEventFactory
     {
-        public static RandomEvent Create(Weather weather)
+        public static RandomEvent Create(int day, Weather weather)
         {
             if (weather == Weather.Cloudy)
                 return CloudyEvent();
@@ -10,7 +10,7 @@
             if (weather == Weather.HotAndDry)
                 return HotAndDryEvent();
             
-            return SunnyEvent();
+            return SunnyEvent(day);
         }
 
         private static RandomEvent CloudyEvent()
@@ -25,9 +25,9 @@
             return new HeatWave();
         }
 
-        private static RandomEvent SunnyEvent()
+        private static RandomEvent SunnyEvent(int day)
         {
-            if (Rnd.NextDouble() < .25)
+            if (day > 2 && Rnd.NextDouble() < .25)
                 return new StreetWork();
             return new NormalDay();
         }
