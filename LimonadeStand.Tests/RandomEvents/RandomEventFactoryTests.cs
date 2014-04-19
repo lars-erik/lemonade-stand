@@ -1,16 +1,22 @@
 ﻿using LimonadeStand.Common;
-using LimonadeStand.Common.SalesModifiers;
+using LimonadeStand.Common.RandomEvents;
 using NUnit.Framework;
 
-namespace LimonadeStand.Tests.SalesModifiers
+namespace LimonadeStand.Tests.RandomEvents
 {
     [TestFixture]
-    public class SalesModifierFactoryTests
+    public class RandomEventFactoryTests
     {
         [Test]
         public void Create_WhenCloudy_HasChanceOfRain()
         {
-            AssertWeatherEvent<Rain>(Weather.Cloudy);
+            AssertSeededEvent<Rain>(1, Weather.Cloudy);
+        }
+
+        [Test]
+        public void Create_WhenCloudyAndRandomLessThanTwentyFive_IsStorm()
+        {
+            AssertSeededEvent<Storm>(14, Weather.Cloudy);
         }
 
         [Test]
@@ -36,16 +42,22 @@ namespace LimonadeStand.Tests.SalesModifiers
         }
 
         private void AssertSunnyDay<TRandomEvent>(int seed)
-            where TRandomEvent : SalesModifier
+            where TRandomEvent : RandomEvent
+        {
+            AssertSeededEvent<TRandomEvent>(seed, Weather.Sunny);
+        }
+
+        private static void AssertSeededEvent<TRandomEvent>(int seed, Weather weather) 
+            where TRandomEvent : RandomEvent
         {
             Rnd.Reset(seed);
-            AssertWeatherEvent<TRandomEvent>(Weather.Sunny);
+            AssertWeatherEvent<TRandomEvent>(weather);
         }
 
         private static void AssertWeatherEvent<TRandomEvent>(Weather weather) 
-            where TRandomEvent : SalesModifier
+            where TRandomEvent : RandomEvent
         {
-            var evt = SalesModifierFactory.Create(weather);
+            var evt = RandomEventFactory.Create(weather);
             Assert.IsInstanceOf<TRandomEvent>(evt);
         }
     }

@@ -26,15 +26,38 @@ J = rain chance
 P9: High price offset, const 10
 S2: Sales modifier? const 30
 A2: Assets start value, const 2
-C9: Negative sign modifier? const  .5
-C2: Extra sign modifier? const 1
+C9: Negative sign modifier? const  .5 (negSignMod)
+C2: Extra sign modifier? const 1 (extraSignMod)
 
-W: Sign modifier
-V: Sign modification result?
+W: Sign modifier (signMod)
+V: Sign modification result? (signModResult)
 
-N1: Initial glasses sold
-N2: Glasses sold?
+N1: Initial glasses sold (salesFactor)
+N2: Glasses sold? (soldGlasses)
 
 M: Revenue
 E: Expenses
 P1: Profits
+
+pseudo calc code:
+
+if (street crew bought all)
+   sell all
+if (assets less than 0)
+   assets = 0
+
+if (price less than high offset)
+   salesFactor = (high offset - price) / high offset * .8 * sales mod + sales mod
+else
+   salesFactor = (high offset ^ 2) * sales mod / price ^ 2
+signMod = - signs * negSignMod
+signModResult = 1 - (exp(signMod) * extraSignMod) // extra sign mod
+
+soldGlasses = rainFactor * (salesFactor + (salesFactor * signModResult))
+soldGlasses = soldGlasses * (zeroIfStorm)
+
+revenue = min(madeGlasses, soldGlasses) * price
+expenses = madeSigns * signPrice + madeGlasses * priceOfGlass
+profit = revenue - expenses
+
+

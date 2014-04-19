@@ -42,7 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SalesModifiers\SalesModifierFactoryTests.cs" />
+    <Compile Include="CalculationTests.cs" />
+    <Compile Include="RandomEvents\HeatWaveTests.cs" />
+    <Compile Include="RandomEvents\RainTests.cs" />
+    <Compile Include="RandomEvents\RandomEventFactoryTests.cs" />
+    <Compile Include="RandomEvents\StormTests.cs" />
+    <Compile Include="RandomEvents\StreetWorkTests.cs" />
+    <Compile Include="RndTests.cs" />
     <Compile Include="WeatherTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
