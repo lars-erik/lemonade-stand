@@ -1,8 +1,8 @@
-﻿namespace LimonadeStand.Common.RandomEvents
+﻿namespace LimonadeStand.Common.SalesModifiers
 {
-    public class EventFactory
+    public class SalesModifierFactory
     {
-        public static RandomEvent Create(Weather weather)
+        public static SalesModifier Create(Weather weather)
         {
             if (weather == Weather.Cloudy)
                 return new Rain();
@@ -10,7 +10,7 @@
                 return new HeatWave();
             if (Rnd.NextDouble() < .25)
                 return new StreetWork();
-            return new JustAnotherDay();
+            return new NormalDay();
         }
     }
 }

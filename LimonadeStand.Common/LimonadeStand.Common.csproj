@@ -39,12 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RandomEvents\EventFactory.cs" />
-    <Compile Include="RandomEvents\HeatWave.cs" />
-    <Compile Include="RandomEvents\JustAnotherDay.cs" />
-    <Compile Include="RandomEvents\Rain.cs" />
-    <Compile Include="RandomEvents\RandomEvent.cs" />
-    <Compile Include="RandomEvents\StreetWork.cs" />
+    <Compile Include="SalesModifiers\SalesModifierFactory.cs" />
+    <Compile Include="SalesModifiers\HeatWave.cs" />
+    <Compile Include="SalesModifiers\NormalDay.cs" />
+    <Compile Include="SalesModifiers\Rain.cs" />
+    <Compile Include="SalesModifiers\SalesModifier.cs" />
+    <Compile Include="SalesModifiers\StreetWork.cs" />
     <Compile Include="Rnd.cs" />
     <Compile Include="Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
