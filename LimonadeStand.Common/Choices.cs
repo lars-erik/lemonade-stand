@@ -11,7 +11,6 @@
 
         public Choices()
         {
-            
         }
 
         public int Glasses { get; set; }

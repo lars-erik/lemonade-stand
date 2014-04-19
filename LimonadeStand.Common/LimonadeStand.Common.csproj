@@ -41,7 +41,14 @@
   <ItemGroup>
     <Compile Include="Calculation.cs" />
     <Compile Include="Choices.cs" />
+    <Compile Include="Commands\CreateGameCommand.cs" />
+    <Compile Include="Commands\GameId.cs" />
+    <Compile Include="Commands\NextDayCommand.cs" />
     <Compile Include="Day.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Persistence\IRepository.cs" />
+    <Compile Include="Persistence\IUnitOfWork.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="RandomEvents\RandomEventsFactory.cs" />
     <Compile Include="RandomEvents\HeatWave.cs" />
     <Compile Include="RandomEvents\NormalDay.cs" />
@@ -49,10 +56,12 @@
     <Compile Include="RandomEvents\RandomEvent.cs" />
     <Compile Include="RandomEvents\Storm.cs" />
     <Compile Include="RandomEvents\StreetWork.cs" />
+    <Compile Include="Result.cs" />
     <Compile Include="Rnd.cs" />
     <Compile Include="Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
