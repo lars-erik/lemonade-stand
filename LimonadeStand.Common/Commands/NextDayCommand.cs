@@ -1,31 +1,32 @@
 ﻿using LimonadeStand.Common.Persistence;
+using LimonadeStand.Common.RandomEvents;
 
 namespace LimonadeStand.Common.Commands
 {
-    public class NextDayCommand
+    public class NextDayCommand : GameCommandBase
     {
-        private readonly IRepository<Game> repository;
-
         public NextDayCommand(IRepository<Game> repository)
+            : base(repository)
         {
-            this.repository = repository;
         }
 
         public NextDayResult Execute(GameId gameId)
         {
-            var game = repository.Get(g => g.Id == gameId.Id);
-            game.AddDay();
-            return new NextDayResult(game.CurrentDay.Weather);
+            Initialize(gameId);
+            Game.AddDay();
+            return new NextDayResult(Game.CurrentDay);
         }
     }
 
     public class NextDayResult
     {
         public Weather Weather { get; set; }
+        public string ForecastMessage { get; set; }
 
-        public NextDayResult(Weather weather)
+        public NextDayResult(Day day)
         {
-            Weather = weather;
+            Weather = day.Weather;
+            ForecastMessage = day.Event.ForecastMessage;
         }
     }
 }

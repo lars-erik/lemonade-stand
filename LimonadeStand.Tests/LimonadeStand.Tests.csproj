@@ -43,7 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculationTests.cs" />
+    <Compile Include="Commands\AddChoicesCommandTests.cs" />
     <Compile Include="Commands\CreateGameCommandTests.cs" />
+    <Compile Include="Commands\FinishDayCommandTests.cs" />
+    <Compile Include="Commands\GameCommandTestBase.cs" />
     <Compile Include="Commands\NextDayCommandTests.cs" />
     <Compile Include="DayTests.cs" />
     <Compile Include="Fakes\FakeRepository.cs" />

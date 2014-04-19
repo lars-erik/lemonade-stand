@@ -41,7 +41,11 @@
   <ItemGroup>
     <Compile Include="Calculation.cs" />
     <Compile Include="Choices.cs" />
+    <Compile Include="Commands\AddChoicesCommand.cs" />
+    <Compile Include="Commands\CommandResult.cs" />
     <Compile Include="Commands\CreateGameCommand.cs" />
+    <Compile Include="Commands\FinishDayCommand.cs" />
+    <Compile Include="Commands\GameCommandBase.cs" />
     <Compile Include="Commands\GameId.cs" />
     <Compile Include="Commands\NextDayCommand.cs" />
     <Compile Include="Day.cs" />
