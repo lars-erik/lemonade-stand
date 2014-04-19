@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonadeStand.Common", "Lem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonadeStand.Tests", "LemonadeStand.Tests\LemonadeStand.Tests.csproj", "{F82AD7FE-6383-4C95-9723-9748ECF69F0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonadeStand.Web", "LemonadeStand.Web\LemonadeStand.Web.csproj", "{04185416-790B-4534-A5F7-7881880542C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F82AD7FE-6383-4C95-9723-9748ECF69F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F82AD7FE-6383-4C95-9723-9748ECF69F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F82AD7FE-6383-4C95-9723-9748ECF69F0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04185416-790B-4534-A5F7-7881880542C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04185416-790B-4534-A5F7-7881880542C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04185416-790B-4534-A5F7-7881880542C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04185416-790B-4534-A5F7-7881880542C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

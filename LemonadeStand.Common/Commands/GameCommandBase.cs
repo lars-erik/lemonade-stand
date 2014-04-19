@@ -1,3 +1,4 @@
+using System;
 using LemonadeStand.Common.Persistence;
 
 namespace LemonadeStand.Common.Commands

@@ -11,6 +11,8 @@ namespace LemonadeStand.Tests.Commands
         {
             var command = new NextDayCommand(Repository);
             var result = command.Execute(new GameId(Game.Id));
+            Assert.AreEqual(Game.CurrentDay.Number, result.Number);
+            Assert.AreEqual(Game.CurrentDay.LemonadeCost, result.LemonadeCost);
             Assert.AreEqual(Game.CurrentDay.Weather, result.Weather);
             Assert.AreEqual(Game.CurrentDay.Event.ForecastMessage, result.ForecastMessage);
         }

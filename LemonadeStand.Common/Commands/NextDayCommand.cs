@@ -19,13 +19,17 @@ namespace LemonadeStand.Common.Commands
 
     public class NextDayResult
     {
+        public int Number { get; set; }
         public Weather Weather { get; set; }
         public string ForecastMessage { get; set; }
+        public int LemonadeCost { get; set; }
 
         public NextDayResult(Day day)
         {
+            Number = day.Number;
             Weather = day.Weather;
             ForecastMessage = day.Event.ForecastMessage;
+            LemonadeCost = day.LemonadeCost;
         }
     }
 }

@@ -30,7 +30,11 @@ namespace LemonadeStand.Common.Commands
             PlayerNames = playerNames;
         }
 
-        public string[] PlayerNames { get; private set; }
+        public CreateGame()
+        {
+        }
+
+        public string[] PlayerNames { get; set; }
     }
 
     public class CreateGameResult

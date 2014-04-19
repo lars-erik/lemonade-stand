@@ -13,7 +13,7 @@ namespace LemonadeStand.Common
         public RandomEvent Event { get; private set; }
         public List<Choices> Choices { get; private set; } 
         public List<Result> Results { get; private set; }
-        public int LemonadeCosts { get; private set; }
+        public int LemonadeCost { get; private set; }
 
         private Day(int number, Weather weather, RandomEvent randomEvent)
         {
@@ -22,7 +22,7 @@ namespace LemonadeStand.Common
             Event = randomEvent;
             Choices = new List<Choices>();
             Results = new List<Result>();
-            LemonadeCosts = number < 3 ? 2 : number < 5 ? 4 : 5;
+            LemonadeCost = number < 3 ? 2 : number < 5 ? 4 : 5;
         }
 
         public static Day Create(int dayNumber)
@@ -38,7 +38,7 @@ namespace LemonadeStand.Common
             var sales = Calculation.CalculateSales(choices, Event);
             var glassesSold = Math.Min(sales, choices.Glasses);
             var revenue = glassesSold*choices.Price;
-            var expenses = choices.Glasses*LemonadeCosts + choices.Signs*SignPrice;
+            var expenses = choices.Glasses*LemonadeCost + choices.Signs*SignPrice;
             var profit = revenue - expenses;
             Results.Add(new Result(glassesSold, revenue, expenses, profit));
         }

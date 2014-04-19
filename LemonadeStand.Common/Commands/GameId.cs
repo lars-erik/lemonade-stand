@@ -10,5 +10,10 @@ namespace LemonadeStand.Common.Commands
         {
             Id = id;
         }
+
+        public GameId()
+        {
+            
+        }
     }
 }

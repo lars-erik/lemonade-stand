@@ -1,0 +1,49 @@
+﻿@model dynamic
+
+<div ng-controller="inputController">
+    <h3>On day {{day.Number}}, the cost of lemonade is {{day.LemonadeCost}}</h3>
+    <div class="row">
+        <div class="col-md-6">{{player.name}}</div>
+        <div class="col-md-6">Assets {{player.assets}}</div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <label for="glasses">How many glasses of lemonade do you wish to make?</label>
+        </div>
+        <div class="row">
+            <div class="col-xs-1">
+                <input type="number" id="glasses" class="form-control" min="minGlasses" max="maxGlasses" ng-model="glasses" />
+            </div>
+            <div class="col-xs-4">
+                <div ui-slider min="minGlasses" max="maxGlasses" ng-model="glasses" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <label for="signs">How many advertising signs (15 cents each) do you want to make?</label>
+        </div>
+        <div class="row">
+            <div class="col-xs-1">
+                <input type="number" id="signs" class="form-control" min="minSigns" max="maxSigns" ng-model="signs" />
+            </div>
+            <div class="col-xs-4">
+                <div ui-slider min="minSigns" max="maxSigns" ng-model="signs" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <label for="price">What price (in cents) do you wish to charge for lemonade?</label>
+        </div>
+        <div class="row">
+            <div class="col-xs-1">
+                <input type="number" id="price" class="form-control" min="1" max="1000" ng-model="price" />
+            </div>
+            <div class="col-xs-4">
+                <div ui-slider min="1" max="1000" ng-model="price" />
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success" ng-click="confirm()">{{nextCaption}}</button>
+</div>

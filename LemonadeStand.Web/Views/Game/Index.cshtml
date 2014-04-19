@@ -1,0 +1,19 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Game";
+    Layout = "~/Views/Shared/_GameLayout.cshtml";
+}
+
+<div class="game" ng-app="lemonade" ng-controller="applicationController">
+    <div ng-include="currentView"></div>
+</div>
+
+@section scripts
+{
+    <input type="hidden" id="UrlService" value="@Url.Action("Urls")"/>
+    <script type="text/javascript">
+        angular.module("lemonade")
+            .constant("urlServiceUrl", $("#UrlService").val());
+    </script>
+}

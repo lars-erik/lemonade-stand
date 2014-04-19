@@ -31,7 +31,7 @@ namespace LemonadeStand.Tests
         public void LemonadeCosts_Increases(int dayNumber, int costs)
         {
             var day = Day.Create(dayNumber);
-            Assert.AreEqual(costs, day.LemonadeCosts);
+            Assert.AreEqual(costs, day.LemonadeCost);
             // TODO: Day start event?
         }
 

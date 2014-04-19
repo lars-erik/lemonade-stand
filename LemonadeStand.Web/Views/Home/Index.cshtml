@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Lemonade Stand</h1>
+    <p class="lead">
+        A C# port of the original 1973 game by Bob Jamison of the MECC,
+        greatly helped by the port by Codenautics of the 1979 Apple II game.
+        See 
+        <a href="http://codenautics.com/lemonade/" target="_blank">http://codenautics.com/lemonade/</a> and 
+        <a href="http://en.wikipedia.org/wiki/Lemonade_Stand" target="_blank">http://en.wikipedia.org/wiki/Lemonade_Stand</a>
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="@Url.Action("Index", "Game")" class="btn btn-default">Play the game</a>
+    </div>
+</div>

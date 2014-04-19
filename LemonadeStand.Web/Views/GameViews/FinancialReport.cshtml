@@ -1,0 +1,33 @@
+﻿@model dynamic
+
+<div>
+    <h2>Lemonsville Daily Financial Report</h2>
+    <p>Day {{day.Number}}</p>
+    <p>{{report.ResultMessage}}</p>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Glasses sold</th>
+            <th>Per glass</th>
+            <th>Income</th>
+            <th>Glasses made</th>
+            <th>Signs made</th>
+            <th>Expenses</th>
+            <th>Profit</th>
+            <th>Assets</th>
+        </tr>
+        <tr ng-repeat="result in report.Results">
+            <td>{{players[$index].name}}</td>
+            <td>{{result.GlassesSold}}</td>
+            <td>{{choices[$index].Price}}</td>
+            <td>{{result.Revenue}}</td>
+            <td>{{choices[$index].Glasses}}</td>
+            <td>{{choices[$index].Signs}}</td>
+            <td>{{result.Expenses}}</td>
+            <td>{{result.Profits}}</td>
+            <td>{{players[$index].assets}}</td>
+        </tr>
+    </table>
+</div>
+
+<button class="btn btn-success" ng-click="nextDay()">Next day</button>
