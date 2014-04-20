@@ -4,28 +4,28 @@
     <h2>Lemonsville Daily Financial Report</h2>
     <p>Day {{day.Number}}</p>
     <p>{{report.ResultMessage}}</p>
-    <table>
+    <table class="table">
         <tr>
-            <th>Player</th>
-            <th>Glasses sold</th>
-            <th>Per glass</th>
-            <th>Income</th>
-            <th>Glasses made</th>
-            <th>Signs made</th>
-            <th>Expenses</th>
-            <th>Profit</th>
-            <th>Assets</th>
+            <th class="text-center">Player</th>
+            <th class="text-center">Glasses sold</th>
+            <th class="text-center">Per glass</th>
+            <th class="text-center">Income</th>
+            <th class="text-center">Glasses made</th>
+            <th class="text-center">Signs made</th>
+            <th class="text-center">Expenses</th>
+            <th class="text-center">Profit</th>
+            <th class="text-center">Assets</th>
         </tr>
         <tr ng-repeat="result in report.Results">
             <td>{{players[$index].name}}</td>
-            <td>{{result.GlassesSold}}</td>
-            <td>{{choices[$index].Price}}</td>
-            <td>{{result.Revenue}}</td>
-            <td>{{choices[$index].Glasses}}</td>
-            <td>{{choices[$index].Signs}}</td>
-            <td>{{result.Expenses}}</td>
-            <td>{{result.Profits}}</td>
-            <td>{{players[$index].assets}}</td>
+            <td class="text-right">{{result.GlassesSold}}</td>
+            <td class="text-right">{{choices[$index].Price}} cent</td>
+            <td class="text-right">{{result.Revenue / 100 | currency:"$"}}</td>
+            <td class="text-right">{{choices[$index].Glasses}}</td>
+            <td class="text-right">{{choices[$index].Signs}}</td>
+            <td class="text-right">{{result.Expenses / 100 | currency:"$"}}</td>
+            <td class="text-right">{{result.Profits / 100 | currency:"$"}}</td>
+            <td class="text-right">{{players[$index].assets / 100 | currency:"$"}}</td>
         </tr>
     </table>
 </div>

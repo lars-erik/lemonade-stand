@@ -7,41 +7,35 @@
         <div class="col-md-6">Assets {{player.assets}}</div>
     </div>
     <div class="form-group">
-        <div class="row">
-            <label for="glasses">How many glasses of lemonade do you wish to make?</label>
-        </div>
+        <label for="glasses">How many glasses of lemonade do you wish to make?</label>
         <div class="row">
             <div class="col-xs-1">
-                <input type="number" id="glasses" class="form-control" min="minGlasses" max="maxGlasses" ng-model="glasses" />
+                <input type="number" id="glasses" class="form-control" min="{{minGlasses}}" max="{{maxGlasses}}" ng-model="glasses" />
             </div>
             <div class="col-xs-4">
-                <div ui-slider min="minGlasses" max="maxGlasses" ng-model="glasses" />
+                <div ui-slider ng-model="glasses" min="{{minGlasses}}" max="{{maxGlasses}}" />
             </div>
         </div>
     </div>
     <div class="form-group">
-        <div class="row">
-            <label for="signs">How many advertising signs (15 cents each) do you want to make?</label>
-        </div>
+        <label for="signs">How many advertising signs (15 cents each) do you want to make?</label>
         <div class="row">
             <div class="col-xs-1">
-                <input type="number" id="signs" class="form-control" min="minSigns" max="maxSigns" ng-model="signs" />
+                <input type="number" id="signs" class="form-control" min="{{minSigns}}" max="{{maxSigns}}" ng-model="signs" />
             </div>
             <div class="col-xs-4">
-                <div ui-slider min="minSigns" max="maxSigns" ng-model="signs" />
+                <div ui-slider min="{{minSigns}}" max="{{maxSigns}}" ng-model="signs" />
             </div>
         </div>
     </div>
     <div class="form-group">
-        <div class="row">
-            <label for="price">What price (in cents) do you wish to charge for lemonade?</label>
-        </div>
+        <label for="price">What price (in cents) do you wish to charge for lemonade?</label>
         <div class="row">
             <div class="col-xs-1">
                 <input type="number" id="price" class="form-control" min="1" max="1000" ng-model="price" />
             </div>
             <div class="col-xs-4">
-                <div ui-slider min="1" max="1000" ng-model="price" />
+                <div ui-slider min="1" max="100" ng-model="price" />
             </div>
         </div>
     </div>

@@ -13,7 +13,7 @@
 
         public override double Modify(double baseSales, Choices choices)
         {
-            return choices.Glasses;
+            return baseSales*2;
         }
     }
 }

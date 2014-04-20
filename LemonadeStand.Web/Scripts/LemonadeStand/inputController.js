@@ -9,15 +9,23 @@
             scope.signs = null;
             scope.price = null;
             scope.minGlasses = 0;
-            scope.maxGlasses = 1000;
+            scope.maxGlasses = Math.floor(scope.players[playerIndex].assets / scope.day.LemonadeCost);
             scope.minSigns = 0;
-            scope.maxSigns = 1000;
+            scope.maxSigns = Math.floor(scope.players[playerIndex].assets / 15);
         }
 
         scope.player = scope.players[0];
         reset();
 
         scope.nextCaption = scope.players.length > 1 ? "Next player" : "OK";
+
+        scope.$watch("glasses", function() {
+            scope.maxSigns = Math.floor((scope.players[playerIndex].assets - (scope.glasses * scope.day.LemonadeCost)) / 15);
+        });
+
+        scope.$watch("signs", function() {
+            scope.maxGlasses = Math.floor((scope.players[playerIndex].assets - (scope.signs * 15)) / scope.day.LemonadeCost);
+        });
 
         scope.confirm = function() {
             choices[playerIndex] = {

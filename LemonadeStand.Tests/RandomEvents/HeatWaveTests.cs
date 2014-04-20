@@ -17,9 +17,9 @@ namespace LemonadeStand.Tests.RandomEvents
         [TestCase(10)]
         [TestCase(100)]
         [TestCase(1000)]
-        public void Modify_ReturnsGlassesMade(int glassesMade)
+        public void Modify_GivesDoubleSales(int glassesMade)
         {
-            Assert.AreEqual(glassesMade, new HeatWave().Modify(0, new Choices(glassesMade, 100, 0)));
+            Assert.AreEqual(glassesMade*2, new HeatWave().Modify(glassesMade, new Choices(glassesMade, 100, 0)));
         }
     }
 }

@@ -20,9 +20,15 @@
                 urls.actions.createGame,
                 { PlayerNames: $.map(players, function (p) { return p.name; }) }
             ).success(function(data) {
+                var i;
+
                 gameId = data.Id;
                 scope.players = players;
                 scope.currentView = urls.views.welcome;
+
+                for (i = 0; i < scope.players.length; i++) {
+                    scope.players[i].assets = 200;
+                }
             });
         });
 
@@ -35,8 +41,14 @@
                     Choices: choices
                 }
             ).success(function(data) {
+                var i;
+
                 scope.report = data;
                 scope.currentView = urls.views.financialReport;
+
+                for (i = 0; i < scope.players.length; i++) {
+                    scope.players[i].assets += scope.report.Results[i].Profits;
+                }
             });
         });
 
