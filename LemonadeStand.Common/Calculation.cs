@@ -6,13 +6,13 @@ namespace LemonadeStand.Common
     public class Calculation
     {
         private const double HighPrice = 10;
-        private const double SalesModifier = 30;
+        private const double Demand = 30;
 
         public static double SalesFactor(int pricePerGlass)
         {
             if (pricePerGlass < HighPrice)
-                return (HighPrice - pricePerGlass)/HighPrice*.8*SalesModifier + SalesModifier;
-            return Math.Pow(HighPrice, 2)*SalesModifier/Math.Pow(pricePerGlass, 2);
+                return (HighPrice - pricePerGlass)/HighPrice*.8*Demand + Demand;
+            return Math.Pow(HighPrice, 2)*Demand/Math.Pow(pricePerGlass, 2);
         }
 
         public static double SignFactor(int signs)

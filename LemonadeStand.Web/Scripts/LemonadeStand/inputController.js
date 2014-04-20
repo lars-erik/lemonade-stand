@@ -27,7 +27,11 @@
             scope.maxGlasses = Math.floor((scope.players[playerIndex].assets - (scope.signs * 15)) / scope.day.LemonadeCost);
         });
 
-        scope.confirm = function() {
+        scope.confirm = function () {
+            if (scope.inputForm.$invalid) {
+                return;
+            }
+
             choices[playerIndex] = {
                 Glasses: scope.glasses,
                 Signs: scope.signs,

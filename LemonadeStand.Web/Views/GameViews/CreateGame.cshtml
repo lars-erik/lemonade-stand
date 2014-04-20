@@ -1,29 +1,31 @@
 ﻿<div ng-controller="createGameController">
     <h2>New game of Lemonade</h2>
-    <div ng-show="view === 1">
-        <h3><label for="playerCount">How may players will be playing?</label></h3>
-        <div class="row form-group">
-            <div class="col-xs-1">
-                <input type="text" id="playerCount" min="1" max="30" ng-model="playerCount" class="form-control col-xs-1 text-right" ng-focus-select />
+    <form name="createForm" role="form">
+        <div ng-show="view === 1">
+            <h3><label for="playerCount">How may players will be playing?</label></h3>
+            <div class="row form-group">
+                <div class="col-xs-1">
+                    <input type="number" name="playerCount" id="playerCount" min="1" max="30" ng-model="playerCount" class="form-control col-xs-1 text-right" ng-focus-select />
+                </div>
+                <div class="col-xs-6 slider-container">
+                    <div ui-slider min="1" max="30" ng-model="playerCount"></div>
+                </div>
             </div>
-            <div class="col-xs-4 slider-container">
-                <div ui-slider min="1" max="30" ng-model="playerCount"></div>
+            <button class="btn btn-success" ng-click="enterPlayers()" ng-disabled="createForm.$invalid">Next</button>
+        </div>
+        <div ng-show="view === 2">
+            <h3>Enter player names</h3>
+            <div class="form-group" ng-repeat="player in players">
+                <input type="text" ng-model="player.name" class="form-control" ng-focus-select />
+            </div>
+            <div>
+                <button class="btn btn-success" ng-click="startGame()">Start game</button>
+                <button class="btn btn-warning" ng-click="changePlayerCount()">Change players</button>
             </div>
         </div>
-        <button class="btn btn-success" ng-click="enterPlayers()">Next</button>
-    </div>
-    <div ng-show="view === 2">
-        <h3>Enter player names</h3>
-        <div class="form-group" ng-repeat="player in players">
-            <input type="text" ng-model="player.name" class="form-control" ng-focus-select/>
+        <div ng-show="view === 3">
+            <h3>Creating game</h3>
+            <p>Please wait...</p>
         </div>
-        <div>
-            <button class="btn btn-success" ng-click="startGame()">Start game</button>
-            <button class="btn btn-warning" ng-click="changePlayerCount()">Change players</button>
-        </div>
-    </div>
-    <div ng-show="view === 3">
-        <h3>Creating game</h3>
-        <p>Please wait...</p>
-    </div>
+    </form>
 </div>

@@ -46,6 +46,7 @@ input[type="checkbox"].input-validation-error {
 .slider-container {
     height: 34px;
     padding-top: 3px;
+    margin-left: 25px;
 }
 
 .ui-slider-horizontal {
@@ -59,4 +60,89 @@ input[type="checkbox"].input-validation-error {
 
 .col-xs-1 {
     min-width: 48px;
+}
+
+body {
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+    margin-bottom: 140px;
+
+    padding-top: 20px;
+}
+
+.blank {
+    
+}
+
+.sunny {
+    background-image: url('images/sunny.jpg');
+}
+
+.cloudy {
+    background-image: url('images/cloudy.jpg');
+}
+
+.hotanddry {
+    background-image: url('images/hotanddry.jpg');
+}
+
+.storm {
+    background-image: url('images/storm.jpg');
+}
+
+.blank footer {
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid gray;
+}
+
+footer {
+    border-top: 1px solid white;
+    padding-top: 5px;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.30);
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin-top: 0;
+    margin-left: 15px;
+}
+
+.financial-report .row {
+    border-top: 1px solid white;
+    padding-bottom: 5px;
+}
+
+.financial-report .row:nth-child(odd) {
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.20);
+}
+
+.financial-report .row .row {
+    border-top: 0 none;
+    background-color: transparent;
+}
+
+.adsbygoogle {
+    margin-bottom: 7px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-button {
+    cursor: pointer;
+}
+
+.error {
+    display: block;
+    color: red;
+    margin-bottom: 15px;
 }

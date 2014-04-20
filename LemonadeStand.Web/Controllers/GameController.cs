@@ -10,7 +10,8 @@ using LemonadeStand.Common.Persistence;
 
 namespace LemonadeStand.Web.Controllers
 {
-    public class GameController : Controller
+    public class 
+        GameController : Controller
     {
         private GameApplicationRepository repo;
 

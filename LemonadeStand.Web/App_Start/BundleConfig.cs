@@ -14,8 +14,7 @@ namespace LemonadeStand.Web
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
-                        "~/Scripts/angular.js",
-                        "~/Scripts/angular-slider.js"
+                        "~/Scripts/angular.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
@@ -39,7 +38,9 @@ namespace LemonadeStand.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/themes/base/jquery.ui.all.css",
+                      "~/Content/themes/base/jquery.ui.core.css",
+                      "~/Content/themes/base/jquery.ui.slider.css",
+                      "~/Content/themes/base/jquery.ui.theme.css",
                       "~/Content/site.css"));
         }
     }

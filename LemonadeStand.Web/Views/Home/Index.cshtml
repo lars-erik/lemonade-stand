@@ -1,20 +1,62 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-
-<div class="jumbotron">
+﻿<div class="jumbotron">
     <h1>Lemonade Stand</h1>
     <p class="lead">
-        A C# port of the original 1973 game by Bob Jamison of the MECC,
-        greatly helped by the port by Codenautics of the 1979 Apple II game.
-        See 
-        <a href="http://codenautics.com/lemonade/" target="_blank">http://codenautics.com/lemonade/</a> and 
-        <a href="http://en.wikipedia.org/wiki/Lemonade_Stand" target="_blank">http://en.wikipedia.org/wiki/Lemonade_Stand</a>
+        A family-friendly business simulation game for up to 30 local players.<br/>
+        Manage a lemonade stand on your street with money you got from your mom.
     </p>
 </div>
 
 <div class="row">
-    <div class="col-md-12">
-        <a href="@Url.Action("Index", "Game")" class="btn btn-default">Play the game</a>
+    <div class="col-md-12 text-center">
+        <a href="@Url.Action("Index", "Game")" class="btn btn-info btn-lg">Play the game</a>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        What's technical?
+    </div>
+    <div class="panel-body">
+        <p>
+            A C# port of the original 1973 game by Bob Jamison of the MECC,
+            greatly helped by the port by Codenautics of the 1979 Apple II game.
+            See
+            <a href="http://codenautics.com/lemonade/" target="_blank">Codenautics Lemonade Stand remake</a> and
+            <a href="http://en.wikipedia.org/wiki/Lemonade_Stand" target="_blank">Wikipedia</a>.
+        </p>
+        <p>
+            The code is available at github.
+        </p>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        What's the story?
+    </div>
+    <div class="panel-body">
+        <h2>Hi! Welcome to Lemonsville, California!</h2>
+        <p>
+            In this small town, you are in charge of running your own lemonade stand.<br />
+            You can compete with as many other people as you wish, but how much profit you make is up to you
+            (the other stands' sales will not affect your business in any way).<br />
+            If you make the most money, you're the winner!!
+        </p>
+        <p>
+            To manage your lemonade stand, you will  need to make these decisions every day:
+            <ol>
+                <li>How many glasses of lemonade to make (only one batch is made each morning)</li>
+                <li>How many advertising signs to make (the signs cost fifteen cents each)</li>
+                <li>What price to charge for each glass</li>
+            </ol>
+        </p>
+        <p>
+            You will begin with $2.00 cash (assets).<br />
+            Because your mother gave you some sugar, your cost to make lemonade is two cents per glass (this may change in the future).<br />
+            Your expenses are the sum of the cost of the lemonade and the cost of the signs.<br />
+            Your profits are the difference between the income from sales and your expenses.<br />
+            The number of glasses you sell each day depends on the price you charge, and on the number of advertising signs you use.<br />
+            Keep track of your assets, because you can't spend more money than you have!
+        </p>
     </div>
 </div>

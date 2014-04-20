@@ -1,9 +1,12 @@
 ﻿@model dynamic
 
 <div>
-    <h2>Weather forecast</h2>
-    <p>The weather for today is {{day.Weather.Name}}</p>
+    <h2>Lemonsville Weather Report</h2>
+    <h3>{{day.Weather.Name}}</h3>
     <p>{{day.ForecastMessage}}</p>
-    
-    <button class="btn btn-success" ng-click="input()">OK</button>
+
+    <div class="btn-block">
+        <button class="btn btn-danger pull-right" ng-click="newGame()">New game</button>
+        <button class="btn btn-success" ng-click="input()">OK</button>
+    </div>
 </div>

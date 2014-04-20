@@ -1,43 +1,57 @@
 ﻿@model dynamic
 
 <div ng-controller="inputController">
-    <h3>On day {{day.Number}}, the cost of lemonade is {{day.LemonadeCost}}</h3>
-    <div class="row">
-        <div class="col-md-6">{{player.name}}</div>
-        <div class="col-md-6">Assets {{player.assets}}</div>
-    </div>
-    <div class="form-group">
-        <label for="glasses">How many glasses of lemonade do you wish to make?</label>
+    <form role="form" name="inputForm" novalidate>
+        <h3>On day {{day.Number}}, the cost of lemonade is {{day.LemonadeCost}} cents</h3>
         <div class="row">
-            <div class="col-xs-1">
-                <input type="number" id="glasses" class="form-control" min="{{minGlasses}}" max="{{maxGlasses}}" ng-model="glasses" />
-            </div>
-            <div class="col-xs-4">
-                <div ui-slider ng-model="glasses" min="{{minGlasses}}" max="{{maxGlasses}}" />
+            <div class="col-xs-4">{{player.name}}</div>
+            <div class="col-xs-3 text-right">Assets: {{player.assets / 100 | currency:"$"}}</div>
+        </div>
+        <div class="form-group">
+            <label for="glasses">How many glasses of lemonade do you wish to make?</label>
+            <div class="row">
+                <div class="col-xs-1">
+                    <input type="number" name="glasses" id="glasses" class="form-control text-right col-xs-1" required min="{{minGlasses}}" max="{{maxGlasses}}" ng-model="glasses" ng-focus-select />
+                </div>
+                <div class="col-xs-6 slider-container">
+                    <div ui-slider ng-model="glasses" min="{{minGlasses}}" max="{{maxGlasses}}" />
+                </div>
             </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="signs">How many advertising signs (15 cents each) do you want to make?</label>
-        <div class="row">
-            <div class="col-xs-1">
-                <input type="number" id="signs" class="form-control" min="{{minSigns}}" max="{{maxSigns}}" ng-model="signs" />
-            </div>
-            <div class="col-xs-4">
-                <div ui-slider min="{{minSigns}}" max="{{maxSigns}}" ng-model="signs" />
+        <div class="row" ng-hide="inputForm.glasses.$valid || inputForm.glasses.$error.required">
+            <span class="col-md-12 error">Be reasonable! You either can't afford it, or you're producing a negative amount.</span>
+        </div>
+        <div class="form-group">
+            <label for="signs">How many advertising signs (15 cents each) do you want to make?</label>
+            <div class="row">
+                <div class="col-xs-1">
+                    <input type="number" name="signs" id="signs" class="form-control text-right col-xs-1" required min="{{minSigns}}" max="{{maxSigns}}" ng-model="signs" ng-focus-select />
+                </div>
+                <div class="col-xs-6 slider-container">
+                    <div ui-slider min="{{minSigns}}" max="{{maxSigns}}" ng-model="signs" />
+                </div>
             </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="price">What price (in cents) do you wish to charge for lemonade?</label>
-        <div class="row">
-            <div class="col-xs-1">
-                <input type="number" id="price" class="form-control" min="1" max="1000" ng-model="price" />
-            </div>
-            <div class="col-xs-4">
-                <div ui-slider min="1" max="100" ng-model="price" />
+        <div class="row" ng-hide="inputForm.signs.$valid || inputForm.signs.$error.required">
+            <span class="col-md-12 error">Be reasonable! You either can't afford it, or you're producing a negative amount.</span>
+        </div>
+        <div class="form-group">
+            <label for="price">What price (in cents) do you wish to charge for lemonade?</label>
+            <div class="row">
+                <div class="col-xs-1">
+                    <input type="number" name="price" id="price" class="form-control text-right col-xs-1" required min="1" max="100" ng-model="price" ng-focus-select />
+                </div>
+                <div class="col-xs-6 slider-container">
+                    <div ui-slider min="1" max="100" ng-model="price" />
+                </div>
             </div>
         </div>
-    </div>
-    <button class="btn btn-success" ng-click="confirm()">{{nextCaption}}</button>
+        <div class="row" ng-hide="inputForm.price.$valid || inputForm.price.$error.required">
+            <span class="col-md-12 error">Be reasonable! You can't charge more than a dollar in good concience. You wouldn't pay people to get your drinks either?</span>
+        </div>
+        <div class="btn-block">
+            <button class="btn btn-danger pull-right" ng-click="newGame()">New game</button>
+            <button class="btn btn-success" ng-click="confirm()">{{nextCaption}}</button>
+        </div>
+    </form>
 </div>

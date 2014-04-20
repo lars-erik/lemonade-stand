@@ -15,6 +15,7 @@ namespace LemonadeStand.Common.Commands
             Initialize(gameId);
             Game.Calculate();
             return new FinishDayResult(
+                Game.CurrentDay.Event.Name,
                 Game.CurrentDay.Event.ResultMessage,
                 Game.CurrentDay.Results
                 );
@@ -24,10 +25,12 @@ namespace LemonadeStand.Common.Commands
     public class FinishDayResult
     {
         public string ResultMessage { get; set; }
+        public string EventName { get; set; }
         public List<Result> Results { get; set; }
 
-        public FinishDayResult(string resultMessage, List<Result> results)
+        public FinishDayResult(string eventName, string resultMessage, List<Result> results)
         {
+            EventName = eventName;
             ResultMessage = resultMessage;
             Results = results;
         }

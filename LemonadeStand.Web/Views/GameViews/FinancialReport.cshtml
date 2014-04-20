@@ -1,33 +1,65 @@
 ﻿@model dynamic
 
-<div>
+<div class="financial-report">
     <h2>Lemonsville Daily Financial Report</h2>
     <p>Day {{day.Number}}</p>
     <p>{{report.ResultMessage}}</p>
-    <table class="table">
-        <tr>
-            <th class="text-center">Player</th>
-            <th class="text-center">Glasses sold</th>
-            <th class="text-center">Per glass</th>
-            <th class="text-center">Income</th>
-            <th class="text-center">Glasses made</th>
-            <th class="text-center">Signs made</th>
-            <th class="text-center">Expenses</th>
-            <th class="text-center">Profit</th>
-            <th class="text-center">Assets</th>
-        </tr>
-        <tr ng-repeat="result in report.Results">
-            <td>{{players[$index].name}}</td>
-            <td class="text-right">{{result.GlassesSold}}</td>
-            <td class="text-right">{{choices[$index].Price}} cent</td>
-            <td class="text-right">{{result.Revenue / 100 | currency:"$"}}</td>
-            <td class="text-right">{{choices[$index].Glasses}}</td>
-            <td class="text-right">{{choices[$index].Signs}}</td>
-            <td class="text-right">{{result.Expenses / 100 | currency:"$"}}</td>
-            <td class="text-right">{{result.Profits / 100 | currency:"$"}}</td>
-            <td class="text-right">{{players[$index].assets / 100 | currency:"$"}}</td>
-        </tr>
-    </table>
+    <div class="row" ng-repeat="result in report.Results">
+        <h4 class="col-xs-12 col-md-12">{{players[$index].name}}</h4>
+        <div class="col-md-2 col-xs-6 col-sm-4">
+            <div class="row">
+                <label class="col-xs-12">Glasses sold</label>
+                <div class="col-xs-12">{{result.GlassesSold}}</div>
+            </div>
+        </div>
+        <div class="col-md-1 col-xs-6 col-sm-4">
+            <div class="row">
+                <label class="col-xs-12 col-md-12">Price</label>
+                <div class="col-xs-12 col-md-12">{{choices[$index].Price}} cent</div>
+            </div>
+        </div>
+        <div class="col-md-1 col-xs-6 col-sm-4">
+            <div class="row">
+                <label class="col-xs-12 col-md-12">Income</label>
+                <div class="col-xs-12 col-md-12">{{result.Revenue / 100 | currency:"$"}}</div>
+            </div>
+        </div>
+        <div class="col-md-2 col-xs-6 col-sm-4">
+            <div class="row">
+                <label class="col-xs-12">Glasses made</label>
+                <div class="col-xs-12">{{choices[$index].Glasses}}</div>
+            </div>
+        </div>
+        <div class="col-md-2 col-xs-6 col-sm-8">
+            <div class="row">
+                <label class="col-xs-12">Signs made</label>
+                <div class="col-xs-12">{{choices[$index].Signs}}</div>
+            </div>
+        </div>
+        <div class="col-md-1 col-xs-6 col-sm-4">
+            <div class="row">
+                <label class="col-xs-12">Expenses</label>
+                <div class="col-xs-12">{{result.Expenses / 100 | currency:"$"}}</div>
+            </div>
+        </div>
+        <div class="col-md-1 col-xs-6 col-sm-4">
+            <div class="row">
+                <label class="col-xs-12">Profit</label>
+                <div class="col-xs-12">{{result.Profits / 100 | currency:"$"}}</div>
+            </div>
+        </div>
+        <div class="col-md-1 col-xs-6 col-sm-4">
+            <div class="row">
+                <label class="col-xs-12">Assets</label>
+                <div class="col-xs-12">{{players[$index].assets / 100 | currency:"$"}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-block">
+        <button class="btn btn-danger pull-right" ng-click="newGame()">New game</button>
+        <button class="btn btn-success" ng-click="nextDay()">Next day</button>
+        <img src="@Url.Content("~/Content/Images/share.gif")" class="image-button" ng-click="share()"/>
+    </div>
 </div>
 
-<button class="btn btn-success" ng-click="nextDay()">Next day</button>

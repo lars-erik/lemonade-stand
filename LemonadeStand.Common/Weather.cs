@@ -5,7 +5,7 @@
         private readonly string name;
         public static readonly Weather Sunny = new Weather("Sunny");
         public static readonly Weather Cloudy = new Weather("Cloudy");
-        public static readonly Weather HotAndDry = new Weather("HotAndDry");
+        public static readonly Weather HotAndDry = new Weather("Hot and dry");
 
         private Weather(string name)
         {
