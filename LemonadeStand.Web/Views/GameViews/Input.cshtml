@@ -7,6 +7,9 @@
             <div class="col-xs-4">{{player.name}}</div>
             <div class="col-xs-3 text-right">Assets: {{player.assets / 100 | currency:"$"}}</div>
         </div>
+        <div class="row" ng-show="message !== ''">
+            <div class="col-xs-12 error">{{message}}</div>
+        </div>
         <div class="form-group">
             <label for="glasses">How many glasses of lemonade do you wish to make?</label>
             <div class="row">

@@ -5,19 +5,24 @@
             choices = [];
 
         function reset() {
-            scope.glasses = null;
-            scope.signs = null;
-            scope.price = null;
+            scope.glasses = 0;
+            scope.signs = 0;
+            scope.price = 1;
             scope.minGlasses = 0;
             scope.maxGlasses = Math.floor(scope.players[playerIndex].assets / scope.day.LemonadeCost);
             scope.minSigns = 0;
             scope.maxSigns = Math.floor(scope.players[playerIndex].assets / 15);
+
+            scope.message = "";
+            if (scope.player.assets < scope.day.LemonadeCost) {
+                scope.message = "You are bankrupt and can not produce!";
+            }
+
+            scope.nextCaption = scope.players.length > 1 && playerIndex < scope.players.length - 1 ? "Next player" : "Finish day";
         }
 
         scope.player = scope.players[0];
         reset();
-
-        scope.nextCaption = scope.players.length > 1 ? "Next player" : "OK";
 
         scope.$watch("glasses", function() {
             scope.maxSigns = Math.floor((scope.players[playerIndex].assets - (scope.glasses * scope.day.LemonadeCost)) / 15);

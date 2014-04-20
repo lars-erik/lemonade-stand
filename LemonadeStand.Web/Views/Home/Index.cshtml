@@ -1,41 +1,20 @@
 ﻿<div class="jumbotron">
+    <img src="@Url.Content("~/Content/Images/glass.png")" class="pull-right hidden-xs"/>
     <h1>Lemonade Stand</h1>
     <p class="lead">
         A family-friendly business simulation game for up to 30 local players.<br/>
         Manage a lemonade stand on your street with money you got from your mom.
     </p>
-</div>
-
-<div class="row">
-    <div class="col-md-12 text-center">
+    <div class="text-center">
         <a href="@Url.Action("Index", "Game")" class="btn btn-info btn-lg">Play the game</a>
     </div>
 </div>
 
 <div class="panel panel-info">
     <div class="panel-heading">
-        What's technical?
+        Hi! Welcome to Lemonsville, California!
     </div>
     <div class="panel-body">
-        <p>
-            A C# port of the original 1973 game by Bob Jamison of the MECC,
-            greatly helped by the port by Codenautics of the 1979 Apple II game.
-            See
-            <a href="http://codenautics.com/lemonade/" target="_blank">Codenautics Lemonade Stand remake</a> and
-            <a href="http://en.wikipedia.org/wiki/Lemonade_Stand" target="_blank">Wikipedia</a>.
-        </p>
-        <p>
-            The code is available at github.
-        </p>
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        What's the story?
-    </div>
-    <div class="panel-body">
-        <h2>Hi! Welcome to Lemonsville, California!</h2>
         <p>
             In this small town, you are in charge of running your own lemonade stand.<br />
             You can compete with as many other people as you wish, but how much profit you make is up to you
@@ -59,4 +38,26 @@
             Keep track of your assets, because you can't spend more money than you have!
         </p>
     </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        What's technical?
+    </div>
+    <div class="panel-body">
+        <p>
+            A C# port of the original 1973 game by Bob Jamison of the MECC,
+            greatly helped by the port by Codenautics of the 1979 Apple II game.
+            See
+            <a href="http://codenautics.com/lemonade/" target="_blank">Codenautics Lemonade Stand remake</a> and
+            <a href="http://en.wikipedia.org/wiki/Lemonade_Stand" target="_blank">Wikipedia</a>.
+        </p>
+        <p>
+            The code is available at github.
+        </p>
+    </div>
+</div>
+
+<div class="text-center">
+    <a href="@Url.Action("Index", "Game")" class="btn btn-default btn-lg">Play the game</a>
 </div>

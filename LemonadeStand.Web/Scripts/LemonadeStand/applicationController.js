@@ -10,6 +10,8 @@
         scope.choices = [];
         scope.report = {};
         scope.ogDescription = escape("Try Lemonade Stand");
+        scope.finished = false;
+        scope.message = "";
 
         urlService.getUrls().then(function(result) {
             urls = result;
@@ -48,8 +50,16 @@
                 scope.currentView = urls.views.financialReport;
                 $("body").addClass(scope.report.EventName.replace(/ /gi, "").toLowerCase());
 
+                scope.finished = true;
                 for (i = 0; i < scope.players.length; i++) {
                     scope.players[i].assets += scope.report.Results[i].Profits;
+                    if (scope.players[i].assets >= scope.day.LemonadeCost) {
+                        scope.finished = false;
+                    }
+                }
+
+                if (scope.finished) {
+                    scope.message = "All players are bankrupt. The game is over!";
                 }
 
                 scope.ogDescription = scope.players[0].name + ' made $' + (scope.players[0].assets / 100) + ' selling lemonade. Have a go, maybe you\'ll get rich!';

@@ -10,7 +10,25 @@
     <meta name="og:type" content="game"/>
     <meta name="og:image" content="http://lemonade.aabech.no/content/images/share.jpg" />
 </head>
-<body class="clear">
+<body class="sunny">
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: 230009193854410,
+                status: false,
+                xfbml: true
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div class="navbar navbar-inverse navbar-fixed-top" style="display:none;">
         <div class="container">
             <div class="navbar-header">
@@ -43,7 +61,10 @@
         @RenderBody()
     </div>
     <footer>
-        <p>&copy; @DateTime.Now.Year - Lars-Erik Aabech</p>
+        <div class="fb-like pull-right" data-href="http://lemonade.aabech.no" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+        <p>
+            &copy; @DateTime.Now.Year - Lars-Erik Aabech
+        </p>
     </footer>
 
     @Scripts.Render("~/bundles/jquery")
